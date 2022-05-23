@@ -15,10 +15,8 @@ def main():
             array.append(int(i_row))
     if len(array) == 0:
         raise Exception("Незаполненный файл")
-    average = sum(array) // len(array)
-    count = 0
-    for item in array:
-        count += abs(average - item)
+    average_array = sorted(array)[len(array) // 2]
+    count = sum([abs(item - average_array) for item in array])
     print(count)
 
 

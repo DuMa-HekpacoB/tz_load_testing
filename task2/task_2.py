@@ -13,9 +13,9 @@ def get_args(first_file: str):
     f_file = os.path.join(os.getcwd(), "task2", first_file)
     with open(f_file, "r") as f_f:
         central_point = f_f.readline()
-        central_point = list(map(lambda x: int(x), central_point.strip().split(" ")))
+        central_point = list(map(lambda x: float(x), central_point.strip().split(" ")))
         radius = f_f.readline()
-        central_point.append(int(radius))
+        central_point.append(float(radius))
         return central_point
 
 
@@ -24,7 +24,7 @@ def get_point(second_file: str):
     list_points = []
     with open(s_file, "r") as s_f:
         for points in s_f:
-            points = tuple(map(lambda x: int(x), points.strip().split(" ")))
+            points = tuple(map(lambda x: float(x), points.strip().split(" ")))
             list_points.append(points)
     return list_points
 
