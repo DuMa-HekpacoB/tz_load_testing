@@ -2,12 +2,12 @@ import sys
 import os
 
 
-def parse_args():
+def parse_args() -> str:
     massive_file = sys.argv[1]
     return massive_file
 
 
-def main():
+def main() -> None:
     file = os.path.join(os.getcwd(), "task4", parse_args())
     array: list = []
     with open(file, "r") as f_txt:
